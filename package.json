@@ -1,0 +1,19 @@
+{
+  "name": "call-parallel",
+  "version": "1.0.0",
+  "description": "Call an array of functions in parallel",
+  "author": {
+    "name": "Anton Kenikh",
+    "email": "kenikh@me.com"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-kenikh/call-parallel.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anthony-kenikh/call-parallel/issues"
+  },
+  "homepage": "https://github.com/anthony-kenikh/call-parallel#readme"
+}
