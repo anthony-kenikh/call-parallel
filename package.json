@@ -1,11 +1,30 @@
 {
   "name": "call-parallel",
-  "version": "1.0.3",
-  "description": "Call an array of functions in parallel",
+  "version": "1.0.4",
+  "description": "Call an array of functions in parallel (allow set the limit number of tasks executing at the same time)",
   "author": {
     "name": "Anton Kenikh",
     "email": "kenikh@me.com"
   },
+  "keywords": [
+    "parallel",
+    "async",
+    "await",
+    "function",
+    "callback",
+    "asynchronous",
+    "call",
+    "run",
+    "call parallel",
+    "run parallel",
+    "limit",
+    "max",
+    "queue",
+    "call parallel limit",
+    "run parallel limit",
+    "max tasks",
+    "tasks"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
