@@ -1,6 +1,13 @@
-# call-parallel
+# call-parallel [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-### Call an array of functions in parallel
+[travis-image]: https://travis-ci.org/anthony-kenikh/call-parallel.svg
+[travis-url]: https://travis-ci.org/anthony-kenikh/call-parallel
+[npm-image]: https://img.shields.io/npm/v/call-parallel.svg
+[npm-url]: https://npmjs.org/package/call-parallel
+[downloads-image]: https://img.shields.io/npm/dm/call-parallel.svg
+[downloads-url]: https://npmjs.org/package/call-parallel
+
+#### Call an array of functions in parallel
 
 ### usage
 
