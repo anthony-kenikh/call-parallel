@@ -38,11 +38,11 @@ arguments passed to the task callbacks.
 ```js
 'use strict';
 
-const parallel = require('./index.js');
+const parallel = require('call-parallel');
 
 (async() => {
   // the results array will equal ['one','two'] even though
-  // the second function had a shorter timeout.
+  // the second function had a shorter timeout
   console.log(await parallel([
     callback => setTimeout(() => callback(null, 'one'), 500),
     callback => setTimeout(() => callback(null, 'two'), 100)
