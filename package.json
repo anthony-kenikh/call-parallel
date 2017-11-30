@@ -1,6 +1,6 @@
 {
   "name": "call-parallel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Call an array of functions in parallel",
   "author": {
     "name": "Anton Kenikh",
