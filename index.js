@@ -1,15 +1,15 @@
 'use strict';
 
-exports = module.exports = function (tasks) {
-  let results, pending, keys;
+exports = module.exports = function (tasks, limit = 0) {
+  let results, required, pending, keys, next = limit;
 
   if (Array.isArray(tasks)) {
     results = [];
-    pending = tasks.length;
+    pending = required = tasks.length;
   } else {
     keys = Object.keys(tasks);
     results = {};
-    pending = keys.length;
+    pending = required = keys.length;
   }
 
   return new Promise(resolve => {
@@ -19,7 +19,14 @@ exports = module.exports = function (tasks) {
 
     function each(i, err, result) {
       results[i] = result;
-      (--pending === 0 || err) && done(err);
+
+      if (--pending === 0 || err) {
+        done(err);
+      } else if (limit && !err && next < required) {
+        let key = keys ? keys[next] : next;
+        next+= 1;
+        tasks[key]((err, result) => each(key, err, result));
+      }
     }
 
     if (!pending) {
@@ -27,10 +34,16 @@ exports = module.exports = function (tasks) {
       done(null)
     } else if (keys) {
       // object
-      keys.forEach(key => tasks[key]((err, result) => each(key, err, result)));
+      keys.some((key, i) => {
+        tasks[key]((err, result) => each(key, err, result));
+        return i === limit - 1; // early return
+      });
     } else {
       // array
-      tasks.forEach((task, i) => task((err, result) => each(i, err, result)));
+      tasks.some((task, i) => {
+        task((err, result) => each(i, err, result));
+        return i === limit - 1;
+      });
     }
   });
 };
